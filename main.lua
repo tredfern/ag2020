@@ -1,3 +1,4 @@
+love.filesystem.setRequirePath("?.lua;?/init.lua;ext/?.lua;ext/?/init.lua;ext/moonpie/?.lua;ext/moonpie/?/init.lua;")
 moonpie = require "moonpie"
 
 
