@@ -27,10 +27,9 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: AMh8JkrGF9UzCTp/WR6enhfWXqi+qafOWJHIFsd/J3ccqRAGn5iVtuRB6R1PQ0aCKROeiPfnroB+oU/gKQfz/05xDNBeJCnyWP98w05hfBPIK8pwh32NwW1eIb4qalgGwWjbfPzyWNz9hQ4IW2tOCxkgqqulvwjfjHiByCBuzEgBl47YbczqaLcOcRsjsu0eelHQLi3xYQ6OcTDW0jmjsd8WN09qm37aOBMsv/tHiq16aZdY4xzowuWtb6LTUhWgArOt5uWb6jeW4bAbLQwp2BFx6P9LRm9t1HmhuPtBEb9iEXM49RtASxQcSqQh+nS+cyJE1wuD5oQ5JYdTybnUkzMGsCvifXdg82Cq9xj1HOD5z5qMGVpnGX8sLcGEG5GXqFVaeoiu9TH/MyYBA4CaEhGcPf3Be3fElgwIly0xMq4yrxA97YMChmE0UEX/KUjZDK/KYlZcHZIjLpVWSGIjwkf/WwylaZ6M2Z63t12HoaPLVYekfZ9l+NhJmJEt7VjRc6pXVnjLbm7e22iip2hEJfGr91Uz2LgJBVhWtNSzbCUpCe7QSaFMzTC3xfZ4YuVDj25q085dF1u4+7sLZGQ5iPWkQmeHH4cPHteurs3nTYQbxlIuGkEZoylX8zn2FQDfHvy/M1vRPgpDrjXE7F+bVHSu7whpwBdhnyZSsmUGjB0=
-  file: 
-    - $TRAVIS_BUILD_DIR/../ag2020-$TRAVIS_TAG-$TRAVIS_BUILD_NUMBER.love
+    secure: YMz/LOppWUmwEvAC1YchuIV58f1FxqHj0vAibv5tt/lSmaohEjS26LHB4SKgDamHeP63079nsatn+gfp/dhorHRxfL+FZJeiROuRXar41O6njI9Qk9JMurwCzC4FHJ3Qic+/NJi1zPTHNUPTe/g+FhaNrmxVpqkzg+JcqSoWudOVHZz3CsLBU2rP3flAehruub9e2tQTDHstu/XfYerf8vH0V9N4tJpAusjalhsrAmB/7QE9t1cIUBadEKR8YH65ZCYDUMBfcX6kgRazKb7bbBEW+8qbWDQzRkFLEIiuDMpVEnhtY3areki5E6nuoPFwEqBp1j0jRqxgD8xKqij8Vh15R8zJDiNaNVA4sgoAEe3ieIbRZzu30sRJsPHIO+LqyzxmXPc1ZH8lLtvGyDgB7NrVckRZIdph0IJP8DiRPiY0deR6X0jPBJlBryZ/YpINg4+DyCJqpKMl/ue006wZJnlPIbbpjuUwyS8b7xI6OJtUHVvZt11f25FbatDm3w0VWG4G+O+lhLcVlotkhEM/JFL2d/t/6h3cXWrrynhB76YLJrEq8zQlJws2JPQ1trFwag7d7+Ji4Tc7jYCXEhyPzrBY7KuY12e4Bqwui+fD+vPcd3YfYHuTfi/BOTAyh3NACxbzHgzVUfzcThaAA16vSrgvXniXplHW/vhX1PC1pgA=
+  file: $TRAVIS_BUILD_DIR/../ag2020-$TRAVIS_TAG-$TRAVIS_BUILD_NUMBER.love
   on:
     repo: tredfern/ag2020
-    tags: true  
+    tags: true
     condition: $LUA =~ ^luajit=2.1$
