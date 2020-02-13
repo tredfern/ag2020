@@ -1,5 +1,10 @@
 love.filesystem.setRequirePath("?.lua;?/init.lua;ext/?.lua;ext/?/init.lua;ext/moonpie/?.lua;ext/moonpie/?/init.lua;")
 moonpie = require "moonpie"
+local app = require "game.app"
+
+function love.load()
+  app:render(require("game.ui.title_screen"))
+end
 
 
 function love.update()
