@@ -7,9 +7,16 @@ describe("game.app", function()
   local app = require "game.app"
 
   it("can render components to moonpie", function()
-    moonpie.render = spy.new(function() end)
-    local s = {}
-    app:render(s)
-    assert.spy(moonpie.render).was.called_with("ui", s)
+    mock(moonpie)
+    local s = { id = "test-component" }
+    app.render(s)
+    local n = moonpie.ui.current.find_by_id("test-component")
+    assert.not_nil(n)
+  end)
+
+  it("can quit the game", function()
+    mock(love.event)
+    app.quit()
+    assert.spy(love.event.quit).was.called()
   end)
 end)

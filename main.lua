@@ -1,11 +1,11 @@
 love.filesystem.setRequirePath("?.lua;?/init.lua;ext/?.lua;ext/?/init.lua;ext/moonpie/?.lua;ext/moonpie/?/init.lua;")
 moonpie = require "moonpie"
 local app = require "game.app"
+require "game.ui"
 
 function love.load()
-  app:render(require("game.ui.title_screen"))
+  app.render(moonpie.ui.components.title_screen())
 end
-
 
 function love.update()
   -- moonpie.update handles the mouse and keyboard behaviors

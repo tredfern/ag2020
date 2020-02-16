@@ -4,10 +4,17 @@
 -- https://opensource.org/licenses/MIT
 
 require "assets.stylesheet"
+
 local app = {}
 
-function app:render(scene)
-  moonpie.render("ui", scene)
+function app.render(scene)
+  moonpie.render("ui",
+    moonpie.ui.components.body(scene)
+  )
+end
+
+function app.quit()
+  love.event.quit()
 end
 
 return app
