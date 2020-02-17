@@ -35,7 +35,7 @@ styles.menu_button = {
   width = "100%"
 }
 
-styles.title = {
+styles.menu_screen_title = {
   padding = 30,
   font_size = 50
 }
