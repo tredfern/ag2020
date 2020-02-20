@@ -6,3 +6,4 @@
 require "game.ui.title_screen"
 require "game.ui.new_game"
 require "game.ui.settings"
+require "game.ui.select_hero"

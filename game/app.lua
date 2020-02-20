@@ -34,6 +34,11 @@ function app.transitions.settings()
   app.render(moonpie.ui.components.settings_screen())
 end
 
+function app.transitions.start_game()
+  require "game.ui.select_hero"
+  app.render(moonpie.ui.components.select_hero())
+end
+
 -- bind hot keys
 moonpie.keyboard:hotkey("escape", app.transitions.title_screen)
 

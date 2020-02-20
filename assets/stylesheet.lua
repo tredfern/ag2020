@@ -49,6 +49,13 @@ styles.story_message = {
   opacity = 0.7
 }
 
+styles.story_message_internal = {
+  background_color = "light_shade",
+  padding = 10,
+  margin = 10,
+  opacity = 0.7
+}
+
 styles.message_title = {
   color = "dark_shade",
   font_size = 40,
@@ -66,4 +73,13 @@ styles.message_sub_title = {
 styles.message_text = {
   font_size = 26,
   font_name = "handwriting"
+}
+
+styles.hero_view = {
+  background_color = "light_shade",
+  padding = 10,
+  margin = 2,
+  border = 2,
+  border_color = "light_accent",
+  width = "33%"
 }
