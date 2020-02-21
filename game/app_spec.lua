@@ -5,6 +5,7 @@
 
 describe("game.app", function()
   local app = require "game.app"
+  require "game.ui"
 
   it("can render components to moonpie", function()
     mock(moonpie)
@@ -23,5 +24,14 @@ describe("game.app", function()
   it("sets up a hot key that binds escape to going back to the title screen", function()
     moonpie.keyboard:keypressed("escape")
     assert.not_nil(moonpie.ui.current.find_by_id("title_screen"))
+  end)
+
+  it("has a world for tracking entities", function()
+    assert.not_nil(app.world)
+    assert.not_nil(app.world.add_entities)
+  end)
+
+  it("has a guild property for easily accessing the main guild", function()
+    assert.not_nil(app.guild)
   end)
 end)

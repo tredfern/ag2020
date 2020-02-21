@@ -8,9 +8,7 @@ local app = require "game.app"
 moonpie.ui.components("new_game", function()
   return {
     id = "new_game_screen",
-    moonpie.ui.components.section({
-      moonpie.ui.components.h1({ text = "New Game", style = "menu_screen_title align-center" })
-    }),
+    moonpie.ui.components.screen_title({ title = "New Game" }),
     moonpie.ui.components.section({
       id = "welcome_letter",
       style = "story_message align-center align-middle",
