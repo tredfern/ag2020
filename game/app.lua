@@ -41,7 +41,7 @@ end
 
 
 function app.transitions.hero_roster()
-  app.render(moonpie.ui.components.hero_roster())
+  app.render(moonpie.ui.components.hero_roster( { heros = app.guild.hero_roster }))
 end
 -- bind hot keys
 moonpie.keyboard:hotkey("escape", app.transitions.title_screen)
