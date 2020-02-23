@@ -30,13 +30,17 @@ end
 components("select_hero", function()
   return {
     id = "select_hero_screen",
-    moonpie.ui.components.screen_title({ title = "Choose a Hero" }),
-    moonpie.ui.components.section({
-      id = "welcome_letter",
-      style = "story_message align-center align-middle",
-      hero_view({ name = "Steve" }, 1),
-      hero_view({ name = "Clare" }, 2),
-      hero_view({ name = "Janine" }, 3)
+    moonpie.ui.components.message_layout({
+      title = "Choose a Hero",
+      content = {
+        moonpie.ui.components.section({
+          id = "welcome_letter",
+          style = "story_message align-center align-middle",
+          hero_view({ name = "Steve" }, 1),
+          hero_view({ name = "Clare" }, 2),
+          hero_view({ name = "Janine" }, 3)
+        })
+      }
     })
   }
 end)

@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("game.ui.settings", function()
-  require "game.ui.settings"
+  require "game.ui"
 
   it("registers the component", function()
     assert.not_nil(moonpie.ui.components.settings_screen)
