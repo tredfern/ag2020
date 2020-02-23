@@ -3,6 +3,10 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
+-- Layouts
+require "game.ui.layouts.message_layout"
+
+-- Screens
 require "game.ui.screen_title"
 require "game.ui.hero_roster"
 require "game.ui.new_game"

@@ -83,3 +83,15 @@ styles.hero_view = {
   border_color = "light_accent",
   width = "33%"
 }
+
+styles["hero-row"] = {
+  border = 1,
+  border_color = "light_accent",
+  padding = 6
+}
+
+styles["hero-row-name"] = {
+  font_size = 24,
+  font_name = "default",
+  margin = 4
+}

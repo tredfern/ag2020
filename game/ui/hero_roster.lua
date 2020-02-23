@@ -7,20 +7,24 @@
 moonpie.ui.components("hero_roster", function(props)
   return {
     id = "hero_roster_screen",
-    moonpie.ui.components.screen_title({ title = "Hero Roster" }),
-    moonpie.ui.components.section(
-      moonpie.utility.tables.map(
-        props.heros,
-        function(h, i)
-          return moonpie.ui.components.hero_row({ hero = h, row_number = i })
-        end)
-    )
+    moonpie.ui.components.message_layout({
+      title = "Hero Roster",
+      content = {
+        moonpie.utility.tables.map(
+          props.heros,
+          function(h, i)
+            return moonpie.ui.components.hero_row({ hero = h, row_number = i })
+          end)
+      }
+    })
   }
 end)
 
 moonpie.ui.components("hero_row", function(props)
   return {
     id = "hero_row_" .. props.row_number,
-    moonpie.ui.components.text({ text = props.hero.name })
+    style = "hero-row",
+    moonpie.ui.components.text({ text = props.hero.name, style = "hero-row-name align-middle" }),
+    moonpie.ui.components.button({ caption = "Quest!", style = "btn-warning align-right align-middle" })
   }
 end)
