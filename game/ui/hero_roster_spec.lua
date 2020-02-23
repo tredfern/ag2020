@@ -29,4 +29,15 @@ describe("game.ui.hero_roster", function()
     assert.not_nil(hr:find_by_id("hero_row_2"))
     assert.not_nil(hr:find_by_id("hero_row_3"))
   end)
+
+  it("click on the new quest button shows the new quest screen", function()
+    local hr = moonpie.ui.components.hero_roster({
+      heros = hero_roster
+    })
+
+    local btn = hr:find_by_id("hero_row_1_quest")
+    btn:click()
+
+    assert.not_nil(moonpie.ui.current:find_by_id("choose_quest_screen"))
+  end)
 end)

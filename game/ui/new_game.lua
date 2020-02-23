@@ -41,7 +41,7 @@ moonpie.ui.components("new_game", function()
       moonpie.ui.components.button({
         id = "btn_start_game",
         caption = "Start Game",
-        style = "button_primary menu_button",
+        style = "button-primary menu_button",
         click = app.transitions.start_game }),
     })
   }

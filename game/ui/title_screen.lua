@@ -15,7 +15,7 @@ moonpie.ui.components("title_screen", function()
       moonpie.ui.components.button({
         id = "btn_new_game",
         caption = "New Game",
-        style = "button_primary menu_button",
+        style = "button-primary menu_button",
         click = app.transitions.new_game
       }),
       moonpie.ui.components.button({ id = "btn_continue_game", caption = "Continue", style = "menu_button" }),
