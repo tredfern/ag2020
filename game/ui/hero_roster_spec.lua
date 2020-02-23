@@ -35,9 +35,9 @@ describe("game.ui.hero_roster", function()
       heros = hero_roster
     })
 
-    local btn = hr:find_by_id("hero_row_1_quest")
+    local btn = hr:find_by_id("hero_row_quest_1")
     btn:click()
 
-    assert.not_nil(moonpie.ui.current:find_by_id("choose_quest_screen"))
+    assert.not_nil(moonpie.ui.current.find_by_id("quest_screen"))
   end)
 end)

@@ -3,6 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
+local app = require "game.app"
 
 moonpie.ui.components("hero_roster", function(props)
   return {
@@ -25,9 +26,13 @@ moonpie.ui.components("hero_row", function(props)
     id = "hero_row_" .. props.row_number,
     style = "hero-row",
     moonpie.ui.components.text({ text = props.hero.name, style = "hero-row-name align-middle" }),
-    moonpie.ui.components.button({ 
-      caption = "Quest!", 
-      style = "button-warning align-right align-middle" 
+    moonpie.ui.components.button({
+      id = "hero_row_quest_" .. props.row_number,
+      caption = "Quest!",
+      style = "button-warning align-right align-middle",
+      click = function()
+        app.transitions.show_quest()
+      end
     })
   }
 end)

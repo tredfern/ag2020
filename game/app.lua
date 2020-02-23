@@ -39,6 +39,10 @@ function app.transitions.start_game()
   app.render(moonpie.ui.components.select_hero())
 end
 
+function app.transitions.show_quest()
+  app.render(moonpie.ui.components.quest())
+end
+
 
 function app.transitions.hero_roster()
   app.render(moonpie.ui.components.hero_roster( { heros = app.guild.hero_roster }))
