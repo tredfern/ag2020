@@ -23,6 +23,10 @@ function app.quit()
   love.event.quit()
 end
 
+function app.transitions.game_over()
+  app.render(moonpie.ui.components.game_over())
+end
+
 function app.transitions.title_screen()
   app.render(moonpie.ui.components.title_screen())
 end
@@ -39,8 +43,8 @@ function app.transitions.start_game()
   app.render(moonpie.ui.components.select_hero())
 end
 
-function app.transitions.show_quest()
-  app.render(moonpie.ui.components.quest())
+function app.transitions.show_quest(hero)
+  app.render(moonpie.ui.components.quest({ hero = hero }))
 end
 
 

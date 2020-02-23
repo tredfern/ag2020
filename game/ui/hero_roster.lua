@@ -31,7 +31,7 @@ moonpie.ui.components("hero_row", function(props)
       caption = "Quest!",
       style = "button-warning align-right align-middle",
       click = function()
-        app.transitions.show_quest()
+        app.transitions.show_quest(props.hero)
       end
     })
   }

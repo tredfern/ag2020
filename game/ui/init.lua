@@ -6,8 +6,11 @@
 -- Layouts
 require "game.ui.layouts.message_layout"
 
--- Screens
+-- Widgets
 require "game.ui.screen_title"
+
+-- Screens
+require "game.ui.game_over"
 require "game.ui.hero_roster"
 require "game.ui.new_game"
 require "game.ui.quest"
