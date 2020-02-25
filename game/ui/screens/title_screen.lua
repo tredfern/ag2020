@@ -8,6 +8,7 @@ local app = require "game.app"
 moonpie.ui.components("title_screen", function()
   return {
     id = "title_screen",
+    style = "title_screen",
     moonpie.ui.components.screen_title({ title = "Welcome to Fairhaven" }),
     moonpie.ui.components.section({
       id = "menu",
