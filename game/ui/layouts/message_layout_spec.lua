@@ -22,7 +22,7 @@ describe("game.ui.layouts.message_layout", function()
     local layout = moonpie.ui.components.message_layout({
       title = "Things",
       content = {},
-      actions = { 
+      actions = {
         { id = "some-button" }
       }
     })
