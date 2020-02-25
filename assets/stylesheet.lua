@@ -38,22 +38,19 @@ styles.menu_button = {
 }
 
 styles.menu_screen_title = {
-  padding = 30,
+  padding = 15,
   font_size = 50
 }
 
 styles.story_message = {
   width = "80%",
-  background_color = "main",
-  padding = 10,
-  opacity = 0.7
+  background_color = "white",
+  background_image = moonpie.graphics.image.load("assets/images/scroll-message.png"),
 }
 
 styles.story_message_internal = {
-  background_color = "light_shade",
-  padding = 10,
-  margin = 10,
-  opacity = 0.7
+  padding = { top = 60, bottom = 140, right = 180, left = 180 },
+  opacity = 0.7,
 }
 
 styles.message_title = {

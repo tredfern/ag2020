@@ -12,10 +12,13 @@ moonpie.ui.components("message_layout", function(props)
     moonpie.ui.components.section({
       id = "welcome_letter",
       style = "story_message align-center align-middle",
-      moonpie.ui.components.section({
+      {
         style = "story_message_internal align-center",
         props.content
-      })
-    })
+      }
+    }), {
+      id = "message-actions",
+      props.actions
+    }
   }
 end)

@@ -35,7 +35,6 @@ components("select_hero", function()
       content = {
         moonpie.ui.components.section({
           id = "welcome_letter",
-          style = "story_message align-center align-middle",
           hero_view({ name = "Steve" }, 1),
           hero_view({ name = "Clare" }, 2),
           hero_view({ name = "Janine" }, 3)

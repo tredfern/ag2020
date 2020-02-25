@@ -12,7 +12,6 @@ moonpie.ui.components("new_game", function()
       title = "New Game",
       content = {
         moonpie.ui.components.section({
-          style = "story_message_internal align-center",
           {
             moonpie.ui.components.text({ text = "Congratulations!", style = "message_title align-center" }),
           },
@@ -37,6 +36,8 @@ moonpie.ui.components("new_game", function()
             style = "message_text"
           }),
         }),
+      },
+      actions = {
         moonpie.ui.components.button({
           id = "btn_start_game",
           caption = "Start Game",

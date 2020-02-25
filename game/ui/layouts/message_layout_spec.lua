@@ -17,4 +17,16 @@ describe("game.ui.layouts.message_layout", function()
     assert.equals("An important event!", layout:find_by_id("screen_title_heading").text)
     assert.not_nil(layout:find_by_id("some-internal-thing"))
   end)
+
+  it("can render out the actions section for buttons and widgets", function()
+    local layout = moonpie.ui.components.message_layout({
+      title = "Things",
+      content = {},
+      actions = { 
+        { id = "some-button" }
+      }
+    })
+
+    assert.not_nil(layout:find_by_id("some-button"))
+  end)
 end)
