@@ -96,3 +96,40 @@ styles["hero-row-name"] = {
   font_name = "default",
   margin = 4
 }
+
+styles["game-screen-header"] = {
+  border = 2,
+  border_color = "dark_accent",
+  background_color = "dark_shade",
+  padding = 20,
+  color = "main"
+}
+
+styles["game-screen-content"] = { }
+
+styles["game-screen-title"] = {
+  font_size = 42,
+  font_name = "headline"
+}
+
+styles["quest-view"] = {
+  border = 2,
+  border_color = "light_accent",
+  padding = 20,
+  width = "33%"
+}
+
+styles["quest-title"] = {
+  font_size = 24,
+  font_name = "default",
+  margin = 4
+}
+
+styles["quest-content"] = {
+  font_size = 12
+}
+
+styles["quest-image"] = {
+  border = 1,
+  border_color = "light_accent"
+}

@@ -3,31 +3,39 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
+moonpie.ui.components("quest_item", function(props)
+  return {
+    style = "quest-view",
+    { moonpie.ui.components.text{ text = "Rats in the Guild", style = "quest-title align-center" } },
+    {
+      moonpie.ui.components.image{
+        src = "assets/images/dire-rat.png"
+      },
+      moonpie.ui.components.text{
+        text = "There are rats in the guild! You need to clean them out to start your business."
+      },
+    }, {
+      moonpie.ui.components.button{
+        style = "align-center",
+        id = "btn_send", caption = "Send {{name}}",
+        name = props.hero.name,
+        click = function()
+          local app = require "game.app"
+          app.transitions.game_over()
+        end
+      }
+    }
+  }
+end)
 
 moonpie.ui.components("quest", function(props)
   return {
     id = "quest_screen",
-    moonpie.ui.components.message_layout({
-      title = "Quest - Rats in the Adventure Guild!",
+    moonpie.ui.components.game_screen_layout({
+      title = "Quests",
       content = {
         id = "quest_screen",
-        moonpie.ui.components.section({
-          moonpie.ui.components.text({ text = "Oh No!", style = "message_title align-center" }),
-          moonpie.ui.components.text({
-            text = "Rats have infested the adventure guild. Send your hero to clear them out!"
-          })
-        }),
-        moonpie.ui.components.button({
-          id = "btn_send",
-          caption = "Send {{name}} to clear them out",
-          style = "menu_button button-primary",
-          name = props.hero.name,
-          click = function()
-            local app = require "game.app"
-            app.transitions.game_over()
-          end
-        })
-
+        moonpie.ui.components.quest_item(props)
       }
     })
   }

@@ -30,7 +30,7 @@ end
 components("select_hero", function()
   return {
     id = "select_hero_screen",
-    moonpie.ui.components.message_layout({
+    moonpie.ui.components.game_screen_layout({
       title = "Choose a Hero",
       content = {
         moonpie.ui.components.section({

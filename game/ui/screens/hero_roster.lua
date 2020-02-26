@@ -8,7 +8,7 @@ local app = require "game.app"
 moonpie.ui.components("hero_roster", function(props)
   return {
     id = "hero_roster_screen",
-    moonpie.ui.components.message_layout({
+    moonpie.ui.components.game_screen_layout({
       title = "Hero Roster",
       content = {
         moonpie.utility.tables.map(

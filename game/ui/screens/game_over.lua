@@ -6,7 +6,7 @@
 moonpie.ui.components("game_over", function()
   return {
     id = "game_over_screen",
-    moonpie.ui.components.message_layout({
+    moonpie.ui.components.game_screen_layout({
       title = "Game Over",
       content = {
         moonpie.ui.components.section({
