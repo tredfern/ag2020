@@ -12,7 +12,8 @@ moonpie.ui.components("quest_item", function(props)
         src = "assets/images/dire-rat.png"
       },
       moonpie.ui.components.text{
-        text = "There are rats in the guild! You need to clean them out to start your business."
+        text = "There are rats in the guild! You need to clean them out to start your business.",
+        style = "quest-content"
       },
     }, {
       moonpie.ui.components.button{

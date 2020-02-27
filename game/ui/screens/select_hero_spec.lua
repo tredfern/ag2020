@@ -5,22 +5,32 @@
 
 describe("game.ui.select_hero", function()
   require "game.ui"
+  local hero = require "game.entities.hero"
+  local hero_screen
+
+  before_each(function()
+    hero_screen = moonpie.ui.components.select_hero({
+      heroes = {
+        hero:new({ name = "Bob" }),
+        hero:new({ name = "Mary" }),
+        hero:new({ name = "Joseph" })
+      }
+    })
+  end)
 
   it("is a component", function()
     assert.not_nil(moonpie.ui.components.select_hero())
   end)
 
   it("displays three heros you can select", function()
-    local sh = moonpie.ui.components.select_hero()
-    assert.not_nil(sh:find_by_id("btn_select_hero_1"))
-    assert.not_nil(sh:find_by_id("btn_select_hero_2"))
-    assert.not_nil(sh:find_by_id("btn_select_hero_3"))
+    assert.not_nil(hero_screen:find_by_id("btn_select_hero_1"))
+    assert.not_nil(hero_screen:find_by_id("btn_select_hero_2"))
+    assert.not_nil(hero_screen:find_by_id("btn_select_hero_3"))
   end)
 
   it("choosing a hero assigns that hero to the adventure guild roster", function()
-    local sh = moonpie.ui.components.select_hero()
-    local hero_view = sh:find_by_id("hero_view_2")
-    local btn = sh:find_by_id("btn_select_hero_2")
+    local hero_view = hero_screen:find_by_id("hero_view_2")
+    local btn = hero_screen:find_by_id("btn_select_hero_2")
     btn:click()
 
     local app = require "game.app"
@@ -29,6 +39,13 @@ describe("game.ui.select_hero", function()
   end)
 
   it("after selecting a hero it switches to the roster view", function()
+    local btn = hero_screen:find_by_id("btn_select_hero_2")
+    btn:click()
     assert.not_nil(moonpie.ui.current.find_by_id("hero_roster_screen"))
+  end)
+
+  it("receives some heros passed in for figuring out what to display", function()
+    local txt = hero_screen:find_by_id("hero_name_1")
+    assert.equals("Bob", txt.text)
   end)
 end)
