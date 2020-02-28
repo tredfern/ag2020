@@ -7,6 +7,16 @@ local hero = {}
 
 function hero:constructor(props)
   self.name = props.name
+  self.class = props.class
+end
+
+function hero.generate()
+  local names = { "Steve", "Martha", "Mary", "Joseph", "Oskar", "Scanlan" }
+  local class = { "Fighter", "Cleric", "Rogue", "Wizard", "Bard", "Ranger" }
+  return hero:new({
+    name = moonpie.utility.tables.pick_random(names),
+    class = moonpie.utility.tables.pick_random(class)
+  })
 end
 
 

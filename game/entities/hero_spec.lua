@@ -10,4 +10,16 @@ describe("game.entities.hero", function()
     local h = hero:new{ name = "Steve" }
     assert.equals("Steve", h.name)
   end)
+
+  describe("Generating Heroes", function()
+    it("roles up a character with a name", function()
+      local h = hero.generate()
+      assert.not_nil(h.name)
+    end)
+
+    it("picks a class for the character", function()
+      local h = hero.generate()
+      assert.not_nil(h.class)
+    end)
+  end)
 end)

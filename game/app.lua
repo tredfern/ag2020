@@ -40,7 +40,10 @@ function app.transitions.settings()
 end
 
 function app.transitions.start_game()
-  app.render(moonpie.ui.components.select_hero())
+  local hero = require "game.entities.hero"
+  app.render(moonpie.ui.components.select_hero({
+    heroes = { hero.generate(), hero.generate(), hero.generate() }
+  }))
 end
 
 function app.transitions.show_quest(hero)
