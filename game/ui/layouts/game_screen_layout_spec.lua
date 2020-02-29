@@ -28,4 +28,8 @@ describe("game.ui.layouts.game_screen_layout", function()
   it("supports rendering out content", function()
     assert.not_nil(game_screen:find_by_id("some-internal-content"))
   end)
+
+  it("has a navigation bar", function()
+    assert.not_nil(game_screen:find_by_id("navigation_bar"))
+  end)
 end)

@@ -8,6 +8,7 @@ require "game.ui.layouts.message_layout"
 require "game.ui.layouts.game_screen_layout"
 
 -- Widgets
+require "game.ui.navigation_bar"
 require "game.ui.room_list"
 require "game.ui.screen_title"
 
@@ -20,3 +21,4 @@ require "game.ui.screens.quest"
 require "game.ui.screens.settings"
 require "game.ui.screens.select_hero"
 require "game.ui.screens.title_screen"
+require "game.ui.screens.world"
