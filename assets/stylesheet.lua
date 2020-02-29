@@ -133,3 +133,19 @@ styles["quest-image"] = {
   border = 1,
   border_color = "light_accent"
 }
+
+styles.room_row = {
+  border = 1,
+  border_color = "light_accent",
+  padding = 20
+}
+styles.room_list = {
+  background_color = "main",
+  margin = 20,
+  padding = 20
+}
+
+styles.room_name = {
+  font_size = 20,
+  font_name = "default-bold"
+}

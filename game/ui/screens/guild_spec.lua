@@ -5,9 +5,13 @@
 
 describe("game.ui.screen.adventure_guild", function()
   require "game.ui"
+  local ag = require "game.entities.adventure_guild"
 
-  it("can be instantiated", function()
-    local ag = moonpie.ui.components.guild_screen()
-    assert.not_nil(ag)
+  local guild = ag:new()
+  local screen = moonpie.ui.components.guild_screen({ guild = guild })
+
+  it("shows a list of rooms", function()
+    local rooms = screen:find_by_id("room_list")
+    assert.equals(rooms.rooms, guild.rooms)
   end)
 end)

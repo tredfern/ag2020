@@ -51,7 +51,7 @@ function app.transitions.show_quest(hero)
 end
 
 function app.transitions.guild()
-  app.render(moonpie.ui.components.guild_screen())
+  app.render(moonpie.ui.components.guild_screen({ guild = app.guild }))
 end
 
 

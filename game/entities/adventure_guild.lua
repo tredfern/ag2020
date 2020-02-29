@@ -7,6 +7,8 @@ local adventure_guild = {}
 
 function adventure_guild:constructor()
   self.hero_roster = moonpie.collections.list:new()
+  self.rooms = moonpie.collections.list:new()
+  self.rooms:add("Entry Hall", "Kitchen", "Dining Room", "Workers' Quarters")
 end
 
 
