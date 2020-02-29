@@ -22,7 +22,7 @@ moonpie.ui.components("quest_item", function(props)
         name = props.hero.name,
         click = function()
           local app = require "game.app"
-          app.transitions.game_over()
+          app.transitions.guild()
         end
       }
     }

@@ -12,12 +12,10 @@ local function hero_view(hero, number)
     style = "hero_view",
     { components.h2({ id = "hero_name_" .. number, text = hero.name, style = "align-center" }) },
     { components.h3({ id = "hero_class_" .. number, text = hero.class, style = "align-center" }) },
-    components.p("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec mauris at massa ultrices" ..
-      "elementum sed at orci. Sed id turpis quis lectus faucibus ornare ut eu turpis. Etiam imperdiet elit nec " ..
-      "tempus volutpat. Fusce arcu magna, consectetur quis mi at, tempus scelerisque nunc. In hac habitasse platea "),
+    { components.image({ src = "assets/images/hero-avatar.jpg", style = "align-center" }) },
     components.button({
       id = "btn_select_hero_" .. number,
-      components.icon({ icon = "scroll-unfurled", style = "icon-medium"}),
+      components.icon({ icon = "shaking-hands", style = "icon-medium"}),
       style = "align-center",
       click = function()
         local app = require "game.app"

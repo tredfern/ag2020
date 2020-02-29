@@ -50,6 +50,10 @@ function app.transitions.show_quest(hero)
   app.render(moonpie.ui.components.quest({ hero = hero }))
 end
 
+function app.transitions.guild()
+  app.render(moonpie.ui.components.guild_screen())
+end
+
 
 function app.transitions.hero_roster()
   app.render(moonpie.ui.components.hero_roster( { heros = app.guild.hero_roster }))

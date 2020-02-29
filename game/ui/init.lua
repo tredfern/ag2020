@@ -12,6 +12,7 @@ require "game.ui.screen_title"
 
 -- Screens
 require "game.ui.screens.game_over"
+require "game.ui.screens.guild"
 require "game.ui.screens.hero_roster"
 require "game.ui.screens.new_game"
 require "game.ui.screens.quest"
