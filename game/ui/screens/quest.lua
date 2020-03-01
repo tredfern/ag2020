@@ -6,13 +6,19 @@
 moonpie.ui.components("quest_item", function(props)
   return {
     style = "quest-view",
-    { moonpie.ui.components.text{ text = "Rats in the Guild", style = "quest-title align-center" } },
+    { moonpie.ui.components.text{
+        id = "quest_title",
+        text = props.quest.title, style = "quest-title align-center"
+      }
+    },
     {
       moonpie.ui.components.image{
-        src = "assets/images/dire-rat.png"
+        id = "quest_image",
+        src = props.quest.image
       },
       moonpie.ui.components.text{
-        text = "There are rats in the guild! You need to clean them out to start your business.",
+        id = "quest_description",
+        text = props.quest.description,
         style = "quest-content"
       },
     }, {

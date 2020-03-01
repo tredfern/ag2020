@@ -47,7 +47,8 @@ function app.transitions.start_game()
 end
 
 function app.transitions.show_quest(hero)
-  app.render(moonpie.ui.components.quest({ hero = hero }))
+  local rats = require "game.quests.guild_rats"
+  app.render(moonpie.ui.components.quest({ hero = hero, quest = rats.create() }))
 end
 
 function app.transitions.guild()
