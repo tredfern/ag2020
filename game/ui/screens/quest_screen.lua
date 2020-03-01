@@ -10,7 +10,9 @@ moonpie.ui.components("quest_screen", function(props)
       title = "Quests",
       content = {
         id = "quest_screen",
-        moonpie.ui.components.quest_view({ quest = props.quests[1] })
+        moonpie.utility.tables.map(props.quests, function(q)
+          return moonpie.ui.components.quest_view({ quest = q })
+        end)
       }
     })
   }

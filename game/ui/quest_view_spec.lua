@@ -23,4 +23,8 @@ describe("game.ui.quest_view", function()
     local image = quest_view:find_by_id("quest_image")
     assert.equals(quest.image, image.src)
   end)
+
+  it("has an id that matches the quest table", function()
+    assert.equals(quest_view.id, tostring(quest))
+  end)
 end)

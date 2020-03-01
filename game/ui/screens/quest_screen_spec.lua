@@ -24,6 +24,7 @@ describe("game.ui.quest", function()
   end)
 
   it("shows multiple quests", function()
-
+    local q2 = quest_screen:find_by_id(tostring(quests[2]))
+    assert.not_nil(q2)
   end)
 end)

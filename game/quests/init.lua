@@ -4,7 +4,8 @@
 -- https://opensource.org/licenses/MIT
 
 local quests = {
-  require "game.quests.guild_rats"
+  require "game.quests.guild_rats",
+  require "game.quests.explore_cave"
 }
 
 

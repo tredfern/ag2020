@@ -5,6 +5,7 @@
 
 moonpie.ui.components("quest_view", function(props)
   return {
+    id = tostring(props.quest),
     quest = props.quest,
     style = "quest-view",
     { moonpie.ui.components.text{
