@@ -151,3 +151,10 @@ styles.room_name = {
   font_size = 20,
   font_name = "default-bold"
 }
+
+styles.version = {
+  color = "white",
+  font_name = "fixed",
+  padding = 4
+
+}

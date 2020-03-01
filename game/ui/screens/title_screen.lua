@@ -27,6 +27,7 @@ moonpie.ui.components("title_screen", function()
         click = app.transitions.settings
       }),
       moonpie.ui.components.button({ id = "btn_quit", caption = "Quit", style = "menu_button", click = app.quit })
-    })
+    }),
+    moonpie.ui.components.version({ style = "align-right align-bottom" }),
   }
 end)

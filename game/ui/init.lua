@@ -12,6 +12,7 @@ require "game.ui.navigation_bar"
 require "game.ui.quest_view"
 require "game.ui.room_list"
 require "game.ui.screen_title"
+require "game.ui.version"
 
 -- Screens
 require "game.ui.screens.game_over"
