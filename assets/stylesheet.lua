@@ -28,18 +28,20 @@ styles.main_menu = {
   background_color = "main",
   width = 300,
   height = 250,
-  opacity = 0.8,
+  opacity = 0.0,
   padding = 10,
 }
 
 styles.menu_button = {
   width = "75%",
-  align = "center"
+  align = "center",
+  opacity = 0.9
 }
 
 styles.menu_screen_title = {
   padding = 15,
-  font_size = 50
+  font_size = 50,
+  color = "light_accent"
 }
 
 styles.story_message = {
@@ -54,7 +56,7 @@ styles.story_message_internal = {
 }
 
 styles.title_screen = {
-  background_image = moonpie.graphics.image.load("assets/images/creepy-guild.jpg")
+  background_image = moonpie.graphics.image.load("assets/images/title-screen.png")
 }
 
 styles.message_title = {

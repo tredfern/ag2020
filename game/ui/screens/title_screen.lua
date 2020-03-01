@@ -12,7 +12,7 @@ moonpie.ui.components("title_screen", function()
     moonpie.ui.components.screen_title({ title = "Welcome to Fairhaven" }),
     moonpie.ui.components.section({
       id = "menu",
-      style = "main_menu align-center align-middle",
+      style = "main_menu align-center",
       moonpie.ui.components.button({
         id = "btn_new_game",
         caption = "New Game",
