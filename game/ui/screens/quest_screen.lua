@@ -3,14 +3,14 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-moonpie.ui.components("quest", function(props)
+moonpie.ui.components("quest_screen", function(props)
   return {
     id = "quest_screen",
     moonpie.ui.components.game_screen_layout({
       title = "Quests",
       content = {
         id = "quest_screen",
-        moonpie.ui.components.quest_view(props)
+        moonpie.ui.components.quest_view({ quest = props.quests[1] })
       }
     })
   }

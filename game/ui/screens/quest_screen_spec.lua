@@ -6,16 +6,12 @@
 describe("game.ui.quest", function()
   require "game.ui"
   local quest = require "game.entities.quest"
-  local quest_demo = quest:new{
-    title = "Quest Title",
-    description = "Quest Description",
-    image = "some-image"
+  local quests = {
+    quest:new{ title = "Quest Title", description = "Quest Description", image = "some-image" },
+    quest:new{ title = "Quest 2", description = "Quest 2 Desc", image = "quest2.jpg" }
   }
 
-  local quest_screen = moonpie.ui.components.quest({
-    hero = { name = "Bob" },
-    quest = quest_demo
-  })
+  local quest_screen = moonpie.ui.components.quest_screen({ quests = quests })
 
   it("has an id of quest_screen", function()
     assert.equals("quest_screen", quest_screen.id)
@@ -25,5 +21,9 @@ describe("game.ui.quest", function()
     local btn = quest_screen:find_by_id("btn_send")
     btn:click()
     assert.not_nil(moonpie.ui.current.find_by_id("guild_screen"))
+  end)
+
+  it("shows multiple quests", function()
+
   end)
 end)

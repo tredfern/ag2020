@@ -3,6 +3,15 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-return {
+local quests = {
   require "game.quests.guild_rats"
+}
+
+
+return {
+  get_available = function()
+    return moonpie.utility.tables.map(quests, function(q)
+      return q.create()
+    end)
+  end
 }
