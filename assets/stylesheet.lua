@@ -24,6 +24,19 @@ moonpie.graphics.colors.danger = moonpie.graphics.colors.pomegranate
 
 local styles = moonpie.ui.styles
 
+styles.cycle_list = {
+  display = "inline",
+}
+
+styles.cycle_list_display = {
+  border = 1,
+  border_color = "main"
+}
+
+styles.cycle_list_button = {
+  margin = 0
+}
+
 styles.main_menu = {
   background_color = "main",
   width = 300,

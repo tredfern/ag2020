@@ -8,6 +8,14 @@ require "game.ui.layouts.message_layout"
 require "game.ui.layouts.game_screen_layout"
 
 -- Widgets
+require "game.ui.cycle_list"
+require "game.ui.navigation_bar"
+require "game.ui.quest_view"
+require "game.ui.room_list"
+require "game.ui.screen_title"
+require "game.ui.version"
+
+-- Widgets
 require "game.ui.navigation_bar"
 require "game.ui.quest_view"
 require "game.ui.room_list"
