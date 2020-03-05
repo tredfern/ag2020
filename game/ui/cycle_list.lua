@@ -8,9 +8,9 @@ moonpie.ui.components("cycle_list", function(props)
   local display = moonpie.ui.components.text({ id = "cycle_text", style = "cycle_list_display" })
 
   local component
-  component = { 
-    moonpie.ui.components.button{ 
-      id = "previous_btn", 
+  component = {
+    moonpie.ui.components.button{
+      id = "previous_btn",
       caption = "<<",
       style = "cycle_list_button",
       click = function()

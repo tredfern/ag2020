@@ -3,8 +3,18 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
+local resolutions = {
+  { 800, 600 },
+  { 1024, 768 },
+  { 1280, 962 },
+  { 1440, 900 },
+  { 1600, 900 },
+  { 1920, 1080 }
+}
+
 moonpie.ui.components("settings_screen", function()
-  return {
+  local component
+  component = {
     id = "settings_screen",
     moonpie.ui.components.section({
       moonpie.ui.components.h1({ text = "Settings", style = "menu_screen_title align-center" })
@@ -13,19 +23,18 @@ moonpie.ui.components("settings_screen", function()
       moonpie.ui.components.text({ text = "Resolution: "}),
       moonpie.ui.components.cycle_list({
         id = "resolutions",
-        list = {
-          "800 x 600",
-          "1024 x 768",
-          "1280 x 962",
-          "1440 x 900",
-          "1600 x 900",
-          "1920 x 1080"
-        }
+        list = moonpie.utility.tables.map(
+          resolutions,
+          function(res) return string.format("%d x %d", res[1], res[2]) end
+        )
       })
     }),
     moonpie.ui.components.section({
-      moonpie.ui.components.button{ id = "btn_apply", click = function() end }
+      moonpie.ui.components.button{ id = "btn_apply", caption = "Apply", click = function()
+        local v = moonpie.utility.string.split(component:find_by_id("resolutions"):get_selected(), " x ")
+        love.window.setMode(tonumber(v[1]), tonumber(v[2]), { fullscreen = false })
+      end }
     })
-
   }
+  return component
 end)
