@@ -34,3 +34,7 @@ end
 function love.keyreleased(key, scancode)
   moonpie.keyreleased(key, scancode)
 end
+
+function love.resize(width, height)
+  moonpie.resize(width, height)
+end

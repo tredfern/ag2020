@@ -33,6 +33,7 @@ moonpie.ui.components("settings_screen", function()
       moonpie.ui.components.button{ id = "btn_apply", caption = "Apply", click = function()
         local v = moonpie.utility.string.split(component:find_by_id("resolutions"):get_selected(), " x ")
         love.window.setMode(tonumber(v[1]), tonumber(v[2]), { fullscreen = false })
+        moonpie.resize(tonumber(v[1]), tonumber(v[2]))
       end }
     })
   }
