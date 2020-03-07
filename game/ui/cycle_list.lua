@@ -5,7 +5,7 @@
 
 moonpie.ui.components("cycle_list", function(props)
   local cycle_list = moonpie.collections.iterators.cycle(props.list)
-  local display = moonpie.ui.components.text({ id = "cycle_text", style = "cycle_list_display" })
+  local display = moonpie.ui.components.text({ id = "cycle_text", style = "cycle_list_display align-middle" })
 
   local component
   component = {

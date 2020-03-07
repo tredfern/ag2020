@@ -24,17 +24,25 @@ moonpie.graphics.colors.danger = moonpie.graphics.colors.pomegranate
 
 local styles = moonpie.ui.styles
 
+styles.label = {
+  padding = 3
+}
+
 styles.cycle_list = {
   display = "inline",
 }
 
 styles.cycle_list_display = {
   border = 1,
-  border_color = "main"
+  border_color = "dark_accent",
+  background_color = "dark_shade",
+  color = "light_shade",
+  padding = 4
 }
 
 styles.cycle_list_button = {
-  margin = 0
+  margin = 0,
+  padding = 4
 }
 
 styles.main_menu = {
@@ -55,6 +63,13 @@ styles.menu_screen_title = {
   padding = 15,
   font_size = 50,
   color = "light_accent"
+}
+
+styles["settings-dialog"] = {
+  background_color = "main",
+  width = 300,
+  height = 250,
+  padding = 10,
 }
 
 styles.story_message = {
