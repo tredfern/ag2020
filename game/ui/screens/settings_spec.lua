@@ -5,31 +5,41 @@
 
 describe("game.ui.settings", function()
   require "game.ui"
+  local settings_screen
+  local apply_button
+  before_each(function()
+    settings_screen = moonpie.ui.components.settings_screen()
+    settings_screen:set("800 x 600", "Off")
+    apply_button = settings_screen:find_by_id("btn_apply")
+    mock(love)
+  end)
 
   it("registers the component", function()
     assert.not_nil(moonpie.ui.components.settings_screen)
   end)
 
   it("has an id of settings_screen", function()
-    local ss = moonpie.ui.components.settings_screen()
-    assert.equals("settings_screen", ss.id)
+    assert.equals("settings_screen", settings_screen.id)
   end)
 
   it("can change the resolution of the screen", function()
-    mock(love)
-    local ss = moonpie.ui.components.settings_screen()
-    local resolutions = ss:find_by_id("resolutions")
+    local resolutions = settings_screen:find_by_id("resolutions")
     resolutions:select("1600 x 900")
 
-    local apply = ss:find_by_id("btn_apply")
-    apply:click()
-    assert.spy(love.window.setMode).was.called_with(1600,900, { fullscreen = false })
+    apply_button:click()
+    assert.spy(love.window.setMode).was.called_with(1600,900, { fullscreen = false, fullscreentype = "desktop" })
   end)
 
   it("can cancel the dialog and return to title screen", function()
-    local ss = moonpie.ui.components.settings_screen()
-    local cancel = ss:find_by_id("btn_cancel")
+    local cancel = settings_screen:find_by_id("btn_cancel")
     cancel:click()
     assert.not_nil(moonpie.ui.current.find_by_id("title_screen"))
+  end)
+
+  it("can set the full screen mode", function()
+    local fullscreen = settings_screen:find_by_id("full_screen_mode")
+    fullscreen:select("Borderless")
+    apply_button:click()
+    assert.spy(love.window.setMode).was.called_with(800,600, { fullscreen = true, fullscreentype = "desktop" })
   end)
 end)

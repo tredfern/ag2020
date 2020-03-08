@@ -12,6 +12,20 @@ local resolutions = {
   { 1920, 1080 }
 }
 
+local function get_resolution(str)
+  local v = moonpie.utility.string.split(str, " x ")
+  return tonumber(v[1]), tonumber(v[2])
+end
+
+local function fullscreen_enabled(fs)
+  return fs ~= "Off"
+end
+
+local function fullscreen_type(fs)
+  if fs == "Exclusive" then return "exclusive" end
+  return "desktop"
+end
+
 moonpie.ui.components("settings_screen", function()
   local component
   component = {
@@ -34,6 +48,18 @@ moonpie.ui.components("settings_screen", function()
           )
         })
       },
+      {
+        moonpie.ui.components.text{
+          text = "Fullscreen Mode: ",
+          style = "label align-middle"
+        },
+        moonpie.ui.components.cycle_list{
+          id = "full_screen_mode",
+          list = {
+            "Off", "Borderless", "Exclusive"
+          }
+        }
+      },
       moonpie.ui.components.section({
         style = "dialog-controls align-bottom",
         moonpie.ui.components.button{
@@ -41,9 +67,11 @@ moonpie.ui.components("settings_screen", function()
           style = "button-primary",
           caption = "Apply",
           click = function()
-            local v = moonpie.utility.string.split(component:find_by_id("resolutions"):get_selected(), " x ")
-            love.window.setMode(tonumber(v[1]), tonumber(v[2]), { fullscreen = false })
-            moonpie.resize(tonumber(v[1]), tonumber(v[2]))
+            local w, h = get_resolution(component:find_by_id("resolutions"):get_selected())
+            local fs = fullscreen_enabled(component:find_by_id("full_screen_mode"):get_selected())
+            local fst = fullscreen_type(component:find_by_id("full_screen_mode"):get_selected())
+            love.window.setMode(w, h, { fullscreen = fs, fullscreentype = fst })
+            moonpie.resize(w, h)
           end
         },
         moonpie.ui.components.button{
@@ -57,5 +85,10 @@ moonpie.ui.components("settings_screen", function()
       })
     })
   }
+
+  component.set = function(self, res, fs)
+    self:find_by_id("resolutions"):select(res)
+    self:find_by_id("full_screen_mode"):select(fs)
+  end
   return component
 end)
