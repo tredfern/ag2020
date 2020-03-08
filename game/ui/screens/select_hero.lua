@@ -10,7 +10,7 @@ local function hero_view(hero, number)
     id = "hero_view_" .. number,
     hero = hero,
     style = "hero_view",
-    { components.h2({ id = "hero_name_" .. number, text = hero.name, style = "align-center" }) },
+    { components.h2({ id = "hero_name_" .. number, text = tostring(hero.name), style = "align-center" }) },
     { components.h3({ id = "hero_class_" .. number, text = hero.class, style = "align-center" }) },
     { components.image({ src = "assets/images/hero-avatar.jpg", style = "align-center" }) },
     components.button({

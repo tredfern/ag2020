@@ -15,6 +15,8 @@ describe("game.entities.hero", function()
     it("roles up a character with a name", function()
       local h = hero.generate()
       assert.not_nil(h.name)
+      assert.not_nil(h.name.first_name)
+      assert.not_nil(h.name.last_name)
     end)
 
     it("picks a class for the character", function()

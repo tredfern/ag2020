@@ -3,6 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
+local name_generator = require "game.generators.name"
 local hero = {}
 
 function hero:constructor(props)
@@ -11,10 +12,9 @@ function hero:constructor(props)
 end
 
 function hero.generate()
-  local names = { "Steve", "Martha", "Mary", "Joseph", "Oskar", "Scanlan" }
   local class = { "Fighter", "Cleric", "Rogue", "Wizard", "Bard", "Ranger" }
   return hero:new({
-    name = moonpie.utility.tables.pick_random(names),
+    name = name_generator(),
     class = moonpie.utility.tables.pick_random(class)
   })
 end

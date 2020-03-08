@@ -25,7 +25,7 @@ moonpie.ui.components("hero_row", function(props)
   return {
     id = "hero_row_" .. props.row_number,
     style = "hero-row",
-    moonpie.ui.components.text({ text = props.hero.name, style = "hero-row-name align-middle" }),
+    moonpie.ui.components.text({ text = tostring(props.hero.name), style = "hero-row-name align-middle" }),
     moonpie.ui.components.button({
       id = "hero_row_quest_" .. props.row_number,
       caption = "Quest!",
