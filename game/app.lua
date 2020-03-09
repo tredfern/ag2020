@@ -40,6 +40,10 @@ function app.transitions.settings()
 end
 
 function app.transitions.start_game()
+  app.transitions.hire_heroes()
+end
+
+function app.transitions.hire_heroes()
   local hero = require "game.entities.hero"
   app.render(moonpie.ui.components.select_hero({
     heroes = { hero.generate(), hero.generate(), hero.generate() }

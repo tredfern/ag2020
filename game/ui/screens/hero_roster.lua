@@ -11,11 +11,21 @@ moonpie.ui.components("hero_roster", function(props)
     moonpie.ui.components.game_screen_layout({
       title = "Hero Roster",
       content = {
-        moonpie.utility.tables.map(
-          props.heros,
-          function(h, i)
-            return moonpie.ui.components.hero_row({ hero = h, row_number = i })
-          end)
+        {
+          moonpie.ui.components.button{
+            caption = "Hire",
+            id = "btn_hire",
+            style = "align-right",
+            click = app.transitions.hire_heroes
+          }
+        },
+        {
+          moonpie.utility.tables.map(
+            props.heros,
+            function(h, i)
+              return moonpie.ui.components.hero_row({ hero = h, row_number = i })
+            end)
+        }
       }
     })
   }
