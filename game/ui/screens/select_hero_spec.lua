@@ -6,16 +6,16 @@
 describe("game.ui.select_hero", function()
   require "game.ui"
   local hero = require "game.entities.hero"
-  local hero_screen
+  local hero_screen, heroes
 
   before_each(function()
-    hero_screen = moonpie.ui.components.select_hero({
-      heroes = {
-        hero:new({ name = "Bob" }),
-        hero:new({ name = "Mary" }),
-        hero:new({ name = "Joseph" })
-      }
-    })
+    heroes = {
+      hero.generate(),
+      hero.generate(),
+      hero.generate()
+    }
+
+    hero_screen = moonpie.ui.components.select_hero({ heroes = heroes })
   end)
 
   it("is a component", function()
@@ -46,6 +46,6 @@ describe("game.ui.select_hero", function()
 
   it("receives some heros passed in for figuring out what to display", function()
     local txt = hero_screen:find_by_id("hero_name_1")
-    assert.equals("Bob", txt.text)
+    assert.equals(tostring(heroes[1].name), txt.text)
   end)
 end)

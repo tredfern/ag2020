@@ -9,14 +9,22 @@ local hero = {}
 function hero:constructor(props)
   self.name = props.name
   self.class = props.class
+  self.gender = props.gender
+  self.race = props.race
 end
 
 function hero.generate()
   local class = { "Fighter", "Cleric", "Rogue", "Wizard", "Bard", "Ranger" }
-  return hero:new({
-    name = name_generator(),
-    class = moonpie.utility.tables.pick_random(class)
+  local race = { "dwarf", "elf", "gnome", "halfling", "human" }
+  local gender = { "female", "male" }
+
+  local h = hero:new({
+    class = moonpie.utility.tables.pick_random(class),
+    race = moonpie.utility.tables.pick_random(race),
+    gender = moonpie.utility.tables.pick_random(gender)
   })
+  h.name = name_generator(h)
+  return h
 end
 
 

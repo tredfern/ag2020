@@ -5,10 +5,11 @@
 
 describe("game.ui.hero_roster", function()
   require "game.ui"
+  local hero = require "game.entities.hero"
   local hero_roster = {
-    { name = "Bob" },
-    { name = "Jane" },
-    { name = "Oskar" }
+    hero.generate(),
+    hero.generate(),
+    hero.generate()
   }
 
   it("is a component that can be created", function()

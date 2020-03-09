@@ -6,9 +6,10 @@
 describe("game.ui.quest", function()
   require "game.ui"
   local quest = require "game.entities.quest"
+  local image = "assets/images/dire-rat.png"
   local quests = {
-    quest:new{ title = "Quest Title", description = "Quest Description", image = "some-image" },
-    quest:new{ title = "Quest 2", description = "Quest 2 Desc", image = "quest2.jpg" }
+    quest:new{ title = "Quest Title", description = "Quest Description", image = image },
+    quest:new{ title = "Quest 2", description = "Quest 2 Desc", image = image }
   }
 
   local quest_screen = moonpie.ui.components.quest_screen({ quests = quests })

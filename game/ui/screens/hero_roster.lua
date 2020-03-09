@@ -25,7 +25,14 @@ moonpie.ui.components("hero_row", function(props)
   return {
     id = "hero_row_" .. props.row_number,
     style = "hero-row",
+    moonpie.ui.components.icon{ icon = props.hero.gender, style = "icon-medium" },
     moonpie.ui.components.text({ text = tostring(props.hero.name), style = "hero-row-name align-middle" }),
+    moonpie.ui.components.text{
+      text = "({{race}} {{class}})",
+      race = props.hero.race,
+      class = props.hero.class,
+      style = "hero-row-name align-middle"
+    },
     moonpie.ui.components.button({
       id = "hero_row_quest_" .. props.row_number,
       caption = "Quest!",
