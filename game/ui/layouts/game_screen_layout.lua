@@ -5,18 +5,23 @@
 
 moonpie.ui.components("game_screen_layout", function(props)
   return {
+    style = "game-screen",
+    moonpie.ui.components.navigation_bar{
+      id = "navigation_bar"
+    },
     {
       id = "header",
       style = "game-screen-header",
       moonpie.ui.components.text{ id = "screen_title", style = "game-screen-title", text = props.title } ,
-      moonpie.ui.components.navigation_bar{
-        id = "navigation_bar"
-      },
     },
     {
       id = "content",
       style = "game-screen-content",
       props.content
+    },
+    {
+      style = "game-screen-footer align-bottom align-right",
+      moonpie.ui.components.text { text = "potential footer area" }
     }
   }
 end)

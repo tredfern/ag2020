@@ -14,7 +14,7 @@ moonpie.graphics.colors.dark_accent = moonpie.graphics.colors.convert_hex("#e22b
 moonpie.graphics.colors.dark_shade = moonpie.graphics.colors.convert_hex("#36405d")
 
 moonpie.graphics.colors.button_default = moonpie.graphics.colors.dark_shade
-moonpie.graphics.colors.button_default_hover = moonpie.graphics.colors.dark_shade
+moonpie.graphics.colors.button_default_hover = moonpie.graphics.colors.dark_accent
 moonpie.graphics.colors.button_text = moonpie.graphics.colors.white
 moonpie.graphics.colors.primary = moonpie.graphics.colors.dark_accent
 moonpie.graphics.colors.info = moonpie.graphics.colors.steel_gray
@@ -65,6 +65,11 @@ styles.menu_screen_title = {
   color = "light_accent"
 }
 
+styles.navigation_bar = {
+  padding = 3,
+  background_color = "main"
+}
+
 styles["settings-dialog"] = {
   background_color = "main",
   width = 300,
@@ -112,7 +117,7 @@ styles.hero_view = {
   margin = 2,
   border = 2,
   border_color = "light_accent",
-  width = "33%"
+  width = "23%"
 }
 
 styles["hero-row"] = {
@@ -127,15 +132,25 @@ styles["hero-row-name"] = {
   margin = 4
 }
 
-styles["game-screen-header"] = {
-  border = 2,
-  border_color = "dark_accent",
-  background_color = "dark_shade",
-  padding = 20,
-  color = "main"
+styles["game-screen"] = {
+  height = "100%"
 }
 
-styles["game-screen-content"] = { }
+styles["game-screen-header"] = {
+  padding = 5,
+}
+
+styles["game-screen-content"] = {
+  display = "inline",
+  margin = 5,
+  padding = 20,
+  background_color = "light_shade"
+}
+
+styles["game-screen-footer"] = {
+  background_color = "main",
+  padding = 1
+}
 
 styles["game-screen-title"] = {
   font_size = 42,
