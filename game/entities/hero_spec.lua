@@ -30,5 +30,13 @@ describe("game.entities.hero", function()
     it("choose a gender for the hero", function()
       assert.not_nil(generated_hero.gender)
     end)
+
+    it("starts at zero XP", function()
+      assert.equals(0, generated_hero.xp)
+    end)
+
+    it("starts at level 1", function()
+      assert.equals(1, generated_hero.level)
+    end)
   end)
 end)

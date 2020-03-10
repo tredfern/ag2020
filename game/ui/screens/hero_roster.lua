@@ -38,9 +38,15 @@ moonpie.ui.components("hero_row", function(props)
     moonpie.ui.components.icon{ icon = props.hero.gender, style = "icon-medium" },
     moonpie.ui.components.text({ text = tostring(props.hero.name), style = "hero-row-name align-middle" }),
     moonpie.ui.components.text{
-      text = "({{race}} {{class}})",
+      text = "({{race}} Level {{level}} {{class}})",
       race = props.hero.race,
       class = props.hero.class,
+      level = props.hero.level,
+      style = "hero-row-name align-middle"
+    },
+    moonpie.ui.components.text{
+      text = "XP({{xp}})",
+      xp = props.hero.xp,
       style = "hero-row-name align-middle"
     },
     moonpie.ui.components.button({

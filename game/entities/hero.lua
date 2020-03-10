@@ -11,6 +11,8 @@ function hero:constructor(props)
   self.class = props.class
   self.gender = props.gender
   self.race = props.race
+  self.xp = 0
+  self.level = 1
 end
 
 function hero.generate()
