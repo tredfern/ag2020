@@ -34,8 +34,8 @@ describe("game.ui.select_hero", function()
     btn:click()
 
     local app = require "game.app"
-    assert.greater_than(0, #app.guild.hero_roster)
-    assert.is_true(app.guild.hero_roster:contains(hero_view.hero))
+    assert.greater_than(0, #app.game_state.guild.hero_roster)
+    assert.is_true(app.game_state.guild.hero_roster:contains(hero_view.hero))
   end)
 
   it("after selecting a hero it switches to the roster view", function()

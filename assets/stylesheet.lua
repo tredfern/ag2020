@@ -92,6 +92,16 @@ styles.title_screen = {
   background_image = moonpie.graphics.image.load("assets/images/title-screen.png")
 }
 
+styles.turn_counter = {
+  display = "inline",
+  padding = 5
+}
+
+styles.turn_counter_number = {
+  font_name = "handwriting",
+  font_size = 22
+}
+
 styles.message_title = {
   color = "dark_shade",
   font_size = 40,

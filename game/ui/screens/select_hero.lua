@@ -19,7 +19,7 @@ local function hero_view(hero, number)
       style = "align-center",
       click = function()
         local app = require "game.app"
-        app.guild.hero_roster:add(hero)
+        app.game_state.guild.hero_roster:add(hero)
         app.transitions.hero_roster()
       end
     })

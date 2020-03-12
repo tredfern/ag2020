@@ -27,7 +27,7 @@ moonpie.ui.components("navigation_bar", function()
           id = "quest_btn",
           moonpie.ui.components.icon({ style = icon_style, icon = "treasure-map" }),
           click = function()
-            app.transitions.show_quest({ hero = app.guild.hero_roster[1]})
+            app.transitions.show_quest()
           end
         },
         moonpie.ui.components.button{
@@ -39,16 +39,16 @@ moonpie.ui.components("navigation_bar", function()
         },
       }
     },
-    moonpie.ui.components.button_group{
+    {
+      display = "inline",
       style = "align-right",
-      buttons = {
-        moonpie.ui.components.button{
-          id = "btn_end_turn",
-          style = "button-danger",
-          moonpie.ui.components.icon{
-            style = icon_style,
-            icon = "confirmed"
-          }
+      moonpie.ui.components.turn_counter{},
+      moonpie.ui.components.button{
+        id = "btn_end_turn",
+        style = "button-danger",
+        moonpie.ui.components.icon{
+          style = icon_style,
+          icon = "confirmed"
         }
       }
     }

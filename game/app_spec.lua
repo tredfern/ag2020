@@ -26,12 +26,13 @@ describe("game.app", function()
     assert.not_nil(moonpie.ui.current.find_by_id("title_screen"))
   end)
 
-  it("has a world for tracking entities", function()
-    assert.not_nil(app.world)
-    assert.not_nil(app.world.add_entities)
-  end)
-
-  it("has a guild property for easily accessing the main guild", function()
-    assert.not_nil(app.guild)
+  describe("game.app.transitions.new_game", function()
+    it("creates a new game_state", function()
+      app.game_state.turn_counter = 16
+      local og = app.game_state.guild
+      app.transitions.new_game()
+      assert.equals(0, app.game_state.turn_counter)
+      assert.not_equal(og, app.game_state.guild)
+    end)
   end)
 end)

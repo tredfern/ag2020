@@ -4,13 +4,11 @@
 -- https://opensource.org/licenses/MIT
 
 require "assets.stylesheet"
-local ecs = require "moonpie.ecs"
-local adventure_guild = require "game.entities.adventure_guild"
+local game_state = require "game.game_state"
 
 local app = {
   transitions = {},
-  world = ecs.world:new(),
-  guild = adventure_guild:new()
+  game_state = game_state:new()
 }
 
 function app.render(scene)
@@ -32,6 +30,7 @@ function app.transitions.title_screen()
 end
 
 function app.transitions.new_game()
+  app.game_state = game_state:new()
   app.render(moonpie.ui.components.new_game())
 end
 
@@ -56,11 +55,11 @@ function app.transitions.show_quest()
 end
 
 function app.transitions.guild()
-  app.render(moonpie.ui.components.guild_screen({ guild = app.guild }))
+  app.render(moonpie.ui.components.guild_screen({ guild = app.game_state.guild }))
 end
 
 function app.transitions.hero_roster()
-  app.render(moonpie.ui.components.hero_roster( { heros = app.guild.hero_roster }))
+  app.render(moonpie.ui.components.hero_roster( { heros = app.game_state.guild.hero_roster }))
 end
 
 function app.transitions.world_screen()
