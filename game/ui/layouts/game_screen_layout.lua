@@ -5,6 +5,7 @@
 
 moonpie.ui.components("game_screen_layout", function(props)
   return {
+    id = "game_screen_layout",
     style = "game-screen",
     moonpie.ui.components.navigation_bar{
       id = "navigation_bar"

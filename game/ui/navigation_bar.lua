@@ -42,14 +42,17 @@ moonpie.ui.components("navigation_bar", function()
     {
       display = "inline",
       style = "align-right",
-      moonpie.ui.components.turn_counter{},
+      moonpie.ui.components.turn_counter{ turn_number = app.game_state.turn_counter },
       moonpie.ui.components.button{
         id = "btn_end_turn",
         style = "button-danger",
         moonpie.ui.components.icon{
           style = icon_style,
           icon = "confirmed"
-        }
+        },
+        click = function()
+          app:end_turn()
+        end
       }
     }
   }

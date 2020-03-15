@@ -30,4 +30,12 @@ describe("game.ui.navigation_bar", function()
     world_btn:click()
     assert.not_nil(moonpie.ui.current.find_by_id("world_screen"))
   end)
+
+  it("ending a turn triggers the end turn rules", function()
+    local app = require "game.app"
+    mock(app)
+    local endturn = bar:find_by_id("btn_end_turn")
+    endturn:click()
+    assert.spy(app.end_turn).was_called()
+  end)
 end)

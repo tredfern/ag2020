@@ -5,13 +5,9 @@
 
 describe("game.ui.turn_counter", function()
   require "game.ui"
-  local app = require "game.app"
 
   it("displays the current turn for the game", function()
-    app.game_state.turn_counter = 15
-
-    local tc = moonpie.ui.components.turn_counter{}
-    local txt = tc:find_by_id("txt_turn_number")
-    assert.equals("Week: 15", txt.text)
+    local tc = moonpie.ui.components.turn_counter{ turn_number = 12 }
+    assert.equals("Week: 12", tc.text)
   end)
 end)

@@ -21,6 +21,15 @@ function app.quit()
   love.event.quit()
 end
 
+function app.end_turn()
+  app.game_state.turn_counter = app.game_state.turn_counter + 1
+  local layout = moonpie.ui.current.find_by_id("game_screen_layout")
+  if layout then
+    moonpie.logger.debug("Updating Layout")
+    layout:update { game_state = app.game_state }
+  end
+end
+
 function app.transitions.game_over()
   app.render(moonpie.ui.components.game_over())
 end
