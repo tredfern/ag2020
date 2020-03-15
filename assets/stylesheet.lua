@@ -65,6 +65,12 @@ styles.menu_screen_title = {
   color = "light_accent"
 }
 
+styles.moon_display = {
+  padding = 15,
+  font_name = "handwriting",
+  font_size = 22
+}
+
 styles.navigation_bar = {
   padding = 3,
   background_color = "main"

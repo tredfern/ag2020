@@ -10,6 +10,7 @@ function game_state:constructor()
   local ag = require "game.entities.adventure_guild"
   self.world = moonpie.ecs.world:new()
   self.guild = ag:new()
+  self.moon = require "game.entities.moon":new()
   self.turn_counter = 0
 end
 
@@ -20,5 +21,10 @@ end
 function game_state:get_turn_counter()
   return self.turn_counter
 end
+
+function game_state:get_moon()
+  return self.moon
+end
+
 
 return moonpie.class(game_state)
