@@ -4,6 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 moonpie.ui.components("game_screen_layout", function(props)
+  local app = require "game.app"
   return {
     id = "game_screen_layout",
     style = "game-screen",
@@ -22,7 +23,9 @@ moonpie.ui.components("game_screen_layout", function(props)
     },
     {
       style = "game-screen-footer align-bottom align-right",
-      moonpie.ui.components.text { text = "potential footer area" }
+      moonpie.ui.components.resource_pool_display {
+        resource_pool = app.game_state:get_resource_pool()
+      }
     }
   }
 end)

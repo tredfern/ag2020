@@ -165,7 +165,9 @@ styles["game-screen-content"] = {
 
 styles["game-screen-footer"] = {
   background_color = "main",
-  padding = 1
+  padding = 5,
+  border = 1,
+  border_color = "dark_accent"
 }
 
 styles["game-screen-title"] = {

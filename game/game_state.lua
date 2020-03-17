@@ -11,6 +11,7 @@ function game_state:constructor()
   self.world = moonpie.ecs.world:new()
   self.guild = ag:new()
   self.moon = require "game.entities.moon":new()
+  self.resource_pool = require "game.entities.resource_pool":new()
   self.turn_counter = 0
 end
 
@@ -24,6 +25,10 @@ end
 
 function game_state:get_moon()
   return self.moon
+end
+
+function game_state:get_resource_pool()
+  return self.resource_pool
 end
 
 
