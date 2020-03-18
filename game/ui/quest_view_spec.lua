@@ -6,7 +6,7 @@
 describe("game.ui.quest_view", function()
   require "game.ui"
 
-  local quest = require("game.quests.guild_rats").create()
+  local quest = require("game.quests.guild_rats"):clone()
   local quest_view = moonpie.ui.components.quest_view({ quest = quest })
 
   it("tracks the quest in question", function()

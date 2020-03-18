@@ -12,7 +12,7 @@ local quests = {
 return {
   get_available = function()
     return moonpie.utility.tables.map(quests, function(q)
-      return q.create()
+      return q:clone()
     end)
   end
 }

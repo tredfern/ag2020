@@ -9,7 +9,8 @@ describe("game.entities.quest", function()
   local example = quest:new{
     title = "Defend against goblins!",
     description = "Goblins are attacking...",
-    image = "some-image-file"
+    image = "some-image-file",
+    prerequisites = function(gs) return gs:get_turn_counter() > 5 end
   }
 
   it("Has a title for the quest", function()
@@ -29,5 +30,22 @@ describe("game.entities.quest", function()
 
   it("has an image representing the quest", function()
     assert.not_nil(example.image)
+  end)
+
+  it("provides a mechanism for checking if available that defaults to false", function()
+    local gs = require "game.game_state"
+    gs.turn_counter = 3
+    assert.is_false(example:check_prerequisites(gs))
+    gs.turn_counter = 7
+    assert.is_true(example:check_prerequisites(gs))
+  end)
+
+  it("can clone a copy of the quest", function()
+    local copy = example:clone()
+    assert.not_equal(example, copy)
+    assert.equals(example.title, copy.title)
+    assert.equals(example.image, copy.image)
+    assert.equals(example.description, copy.description)
+    assert.equals(example.prerequisites, copy.prerequisites)
   end)
 end)

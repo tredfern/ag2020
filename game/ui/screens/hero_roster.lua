@@ -48,14 +48,6 @@ moonpie.ui.components("hero_row", function(props)
       text = "XP({{xp}})",
       xp = props.hero.xp,
       style = "hero-row-name align-middle"
-    },
-    moonpie.ui.components.button({
-      id = "hero_row_quest_" .. props.row_number,
-      caption = "Quest!",
-      style = "button-warning align-right align-middle",
-      click = function()
-        app.transitions.show_quest(props.hero)
-      end
-    })
+    }
   }
 end)

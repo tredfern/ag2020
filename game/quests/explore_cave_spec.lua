@@ -7,7 +7,7 @@ describe("game.quests.explore_cave", function()
   local cave = require "game.quests.explore_cave"
 
   it("can create a quest entity", function()
-    local q = cave.create()
+    local q = cave:clone()
     assert.not_nil(q)
     assert.not_nil(q.title)
     assert.not_nil(q.description)
