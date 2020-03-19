@@ -13,4 +13,11 @@ describe("game.quests.explore_cave", function()
     assert.not_nil(q.description)
     assert.file_exists(q.image)
   end)
+
+  it("is available turn 1 on", function()
+    local gs = require "game.game_state":new()
+    assert.is_false(cave:check_prerequisites(gs))
+    gs.turn_counter = 1
+    assert.is_true(cave:check_prerequisites(gs))
+  end)
 end)

@@ -6,8 +6,7 @@
 describe("games.quests", function()
   local quests = require "game.quests"
 
-  it("can return quests that are available", function()
-    local q = quests.get_available()
-    assert.greater_than(0, #q)
+  it("is a giant database of quests", function()
+    assert.greater_than(0, #quests)
   end)
 end)

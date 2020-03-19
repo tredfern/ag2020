@@ -4,12 +4,16 @@
 -- https://opensource.org/licenses/MIT
 
 local start_turn = {
-
+  rules = {
+    require "game.rules.start_turn.pick_quests"
+  }
 }
 
 function start_turn:execute(game_state)
   assert(game_state)
-
+  for _, rule in ipairs(start_turn.rules) do
+    rule(game_state)
+  end
 end
 
 

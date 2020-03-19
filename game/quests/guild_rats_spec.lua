@@ -13,4 +13,15 @@ describe("game.quests.guild_rats", function()
     assert.not_nil(q.description)
     assert.file_exists(q.image)
   end)
+
+  it("is available on the turn 0", function()
+    local gs = require "game.game_state":new()
+    assert.is_true(rats:check_prerequisites(gs))
+  end)
+
+  it("is not available after turn 0", function()
+    local gs = require "game.game_state":new()
+    gs.turn_counter = 1
+    assert.is_false(rats:check_prerequisites(gs))
+  end)
 end)

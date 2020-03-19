@@ -8,6 +8,7 @@ local game_state = require "game.game_state"
 
 local app = {
   transitions = {},
+  rules = require "game.rules",
   game_state = game_state:new()
 }
 
@@ -25,6 +26,7 @@ function app.end_turn()
   app.game_state.turn_counter = app.game_state.turn_counter + 1
   app.game_state:get_moon():advance()
   app.render(moonpie.ui.components.end_turn_screen())
+  app.rules.start_turn:execute(app.game_state)
 end
 
 function app.transitions.game_over()
@@ -56,8 +58,7 @@ function app.transitions.hire_heroes()
 end
 
 function app.transitions.show_quest()
-  local quests = require "game.quests"
-  app.render(moonpie.ui.components.quest_screen({ quests = quests.get_available() }))
+  app.render(moonpie.ui.components.quest_screen({ quests = app.game_state.quests }))
 end
 
 function app.transitions.guild()

@@ -3,8 +3,13 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local quests = require "game.quests"
+return function(game_state, quests)
+  quests = quests or require "game.quests"
 
-return function(game_state)
-  game_state.quests:add(quests.get_available())
+  game_state.quests = moonpie.collections.list:new()
+  for _, v in ipairs(quests) do
+    if v:check_prerequisites(game_state) then
+      game_state.quests:add(v:clone())
+    end
+  end
 end

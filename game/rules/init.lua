@@ -3,9 +3,6 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local quests = {
-  require "game.quests.guild_rats",
-  require "game.quests.explore_cave"
+return {
+  start_turn = require "game.rules.start_turn",
 }
-
-return quests
