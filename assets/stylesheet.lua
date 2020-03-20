@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-moonpie.graphics.font:register("assets/fonts/Black Window.ttf", "headline")
-moonpie.graphics.font:register("assets/fonts/Black Window.ttf", "headline-bold")
+moonpie.graphics.font:register("assets/fonts/Augusta.ttf", "headline")
+moonpie.graphics.font:register("assets/fonts/Augusta.ttf", "headline-bold")
 moonpie.graphics.font:register("assets/fonts/Abbasy Calligraphy Typeface.ttf", "handwriting")
 
 moonpie.graphics.colors.light_shade = moonpie.graphics.colors.convert_hex("#f3f3f3")
@@ -111,20 +111,25 @@ styles.turn_counter_number = {
 styles.message_title = {
   color = "dark_shade",
   font_size = 40,
-  font_name = "Black Window",
+  font_name = "headline",
   margin = 5
 }
 
 styles.message_sub_title = {
   color = "dark_shade",
   font_size = 30,
-  font_name = "Black Window",
+  font_name = "headline",
   margin = 5
 }
 
 styles.message_text = {
   font_size = 26,
   font_name = "handwriting"
+}
+
+styles["hero-portrait"] = {
+  width = 150,
+  height = 150
 }
 
 styles.hero_view = {
@@ -217,5 +222,4 @@ styles.version = {
   color = "white",
   font_name = "fixed",
   padding = 4
-
 }

@@ -12,7 +12,7 @@ local function hero_view(hero, number)
     style = "hero_view",
     { components.h2({ id = "hero_name_" .. number, text = tostring(hero.name), style = "align-center" }) },
     { components.h3({ id = "hero_class_" .. number, text = hero.class, style = "align-center" }) },
-    { components.image({ src = "assets/images/hero-avatar.jpg", style = "align-center" }) },
+    { components.image({ src = "assets/images/hero-portrait-1.png", style = "hero-portrait align-center" }) },
     components.button({
       id = "btn_select_hero_" .. number,
       components.icon({ icon = "shaking-hands", style = "icon-medium"}),

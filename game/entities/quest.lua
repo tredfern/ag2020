@@ -29,4 +29,14 @@ function quest:clone()
   }
 end
 
+local prereqs = {
+  turn_counter = function(min)
+    return function(gs)
+      return gs:get_turn_counter() >= min
+    end
+  end
+}
+
+quest.prerequisites = prereqs
+
 return moonpie.class(quest)

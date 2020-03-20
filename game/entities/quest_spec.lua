@@ -5,6 +5,7 @@
 
 describe("game.entities.quest", function()
   local quest = require "game.entities.quest"
+  local game_state = require "game.game_state"
 
   local example = quest:new{
     title = "Defend against goblins!",
@@ -33,11 +34,10 @@ describe("game.entities.quest", function()
   end)
 
   it("provides a mechanism for checking if available that defaults to false", function()
-    local gs = require "game.game_state"
-    gs.turn_counter = 3
-    assert.is_false(example:check_prerequisites(gs))
-    gs.turn_counter = 7
-    assert.is_true(example:check_prerequisites(gs))
+    game_state.turn_counter = 3
+    assert.is_false(example:check_prerequisites(game_state))
+    game_state.turn_counter = 7
+    assert.is_true(example:check_prerequisites(game_state))
   end)
 
   it("can clone a copy of the quest", function()
@@ -47,5 +47,16 @@ describe("game.entities.quest", function()
     assert.equals(example.image, copy.image)
     assert.equals(example.description, copy.description)
     assert.equals(example.prerequisites, copy.prerequisites)
+  end)
+
+  describe("prerequisites", function()
+    it("can validate that the turn is a after a number", function()
+      local tc = quest.prerequisites.turn_counter(3)
+      game_state.turn_counter = 2
+      assert.is_false(tc(game_state))
+
+      game_state.turn_counter = 4
+      assert.is_true(tc(game_state))
+    end)
   end)
 end)
