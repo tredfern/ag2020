@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-describe("game.quests.guild_rats", function()
-  local rats = require "game.quests.guild_rats"
+describe("assets.quests.guild_rats", function()
+  local rats = require "assets.quests.guild_rats"
 
   it("can create a quest entity", function()
     local q = rats:clone()

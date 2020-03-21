@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-describe("game.quests.explore_dungeon", function()
-  local explore_dungeon = require "game.quests.explore_dungeon"
+describe("assets.quests.explore_dungeon", function()
+  local explore_dungeon = require "assets.quests.explore_dungeon"
 
   it("has the primary attributes", function()
     local ed = explore_dungeon:clone()

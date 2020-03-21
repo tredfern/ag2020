@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("games.quests", function()
-  local quests = require "game.quests"
+  local quests = require "assets.quests"
 
   it("is a giant database of quests", function()
     assert.greater_than(0, #quests)

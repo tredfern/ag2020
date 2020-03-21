@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-describe("game.quests.creepy_graveyard", function()
-  local creepy_graveyard = require "game.quests.creepy_graveyard"
+describe("assets.quests.creepy_graveyard", function()
+  local creepy_graveyard = require "assets.quests.creepy_graveyard"
 
   it("has the primary attributes", function()
     local cg = creepy_graveyard:clone()

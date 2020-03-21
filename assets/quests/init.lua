@@ -3,7 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local quest_files = moonpie.utility.files.find("game/quests/", "lua$", "_spec.lua$")
+local quest_files = moonpie.utility.files.find("assets/quests/", "lua$", "_spec.lua$")
 local quests = moonpie.collections.list:new()
 
 for _, v in ipairs(quest_files) do

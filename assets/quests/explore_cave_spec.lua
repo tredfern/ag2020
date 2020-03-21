@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-describe("game.quests.explore_cave", function()
-  local cave = require "game.quests.explore_cave"
+describe("assets.quests.explore_cave", function()
+  local cave = require "assets.quests.explore_cave"
 
   it("can create a quest entity", function()
     local q = cave:clone()

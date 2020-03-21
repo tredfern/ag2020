@@ -3,8 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-describe("game.quests.deliver_the_stuff", function()
-  local delivery = require "game.quests.deliver_the_stuff"
+describe("assets.quests.deliver_the_stuff", function()
+  local delivery = require "assets.quests.deliver_the_stuff"
 
   it("is a valid quest", function()
     local d = delivery:clone()

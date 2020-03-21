@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 return function(game_state, quests)
-  quests = quests or require "game.quests"
+  quests = quests or require "assets.quests"
 
   game_state.quests = moonpie.collections.list:new()
   for _, v in ipairs(quests) do
