@@ -199,7 +199,9 @@ styles["quest-content"] = {
 
 styles["quest-image"] = {
   border = 1,
-  border_color = "light_accent"
+  border_color = "light_accent",
+  width = 150,
+  height = 150
 }
 
 styles.room_row = {

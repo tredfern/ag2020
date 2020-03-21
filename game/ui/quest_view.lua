@@ -16,7 +16,9 @@ moonpie.ui.components("quest_view", function(props)
     {
       moonpie.ui.components.image{
         id = "quest_image",
-        src = props.quest.image
+        style = "quest-image align-center",
+        src = props.quest.image,
+        background_color = "main"
       },
       moonpie.ui.components.text{
         id = "quest_description",
