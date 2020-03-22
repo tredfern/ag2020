@@ -29,6 +29,12 @@ function app.end_turn()
   app.rules.start_turn:execute(app.game_state)
 end
 
+function app.transitions.assign_hero(quest)
+  app.render(moonpie.ui.components.assign_hero_screen{
+    quest = quest
+  })
+end
+
 function app.transitions.game_over()
   app.render(moonpie.ui.components.game_over())
 end

@@ -19,6 +19,7 @@ require "game.ui.turn_counter"
 require "game.ui.version"
 
 -- Screens
+require "game.ui.screens.assign_hero"
 require "game.ui.screens.end_turn_screen"
 require "game.ui.screens.game_over"
 require "game.ui.screens.guild"

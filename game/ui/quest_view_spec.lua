@@ -27,4 +27,12 @@ describe("game.ui.quest_view", function()
   it("has an id that matches the quest table", function()
     assert.equals(quest_view.id, tostring(quest))
   end)
+
+  it("sends you to the assign hero screen", function()
+    local app = require "game.app"
+    mock(app.transitions)
+    local btn = quest_view:find_by_id("btn_assign_hero")
+    btn:click()
+    assert.spy(app.transitions.assign_hero).was.called_with(quest)
+  end)
 end)

@@ -8,12 +8,12 @@ moonpie.ui.components("quest_view", function(props)
     id = tostring(props.quest),
     quest = props.quest,
     style = "quest-view",
-    { moonpie.ui.components.text{
+    {
+      moonpie.ui.components.text{
         id = "quest_title",
         text = props.quest.title, style = "quest-title align-center"
       }
-    },
-    {
+    }, {
       moonpie.ui.components.image{
         id = "quest_image",
         style = "quest-image align-center",
@@ -28,10 +28,11 @@ moonpie.ui.components("quest_view", function(props)
     }, {
       moonpie.ui.components.button{
         style = "align-center",
-        id = "btn_send", caption = "Do the Quest",
+        id = "btn_assign_hero",
+        caption = "Assign Hero",
         click = function()
           local app = require "game.app"
-          app.transitions.guild()
+          app.transitions.assign_hero(props.quest)
         end
       }
     }
