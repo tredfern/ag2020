@@ -5,5 +5,6 @@
 
 return {
   assign_hero_to_quest = require "game.rules.assign_hero_to_quest",
+  end_turn = require "game.rules.end_turn",
   start_turn = require "game.rules.start_turn",
 }

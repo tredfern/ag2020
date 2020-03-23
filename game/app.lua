@@ -23,10 +23,9 @@ function app.quit()
 end
 
 function app.end_turn()
-  app.game_state.turn_counter = app.game_state.turn_counter + 1
-  app.game_state:get_moon():advance()
+  app.rules.end_turn(app.game_state)
   app.render(moonpie.ui.components.end_turn_screen())
-  app.rules.start_turn:execute(app.game_state)
+  app.rules.start_turn(app.game_state)
 end
 
 function app.transitions.assign_hero(quest)

@@ -6,7 +6,7 @@
 local function quest_status(quest)
   if quest.hero then
     return moonpie.ui.components.text{
-      style = "align-center",
+      style = "align-center quest-view-status",
       id = "quest_status",
       text = "Hero {{name}} assigned.",
       name = quest.hero.name
