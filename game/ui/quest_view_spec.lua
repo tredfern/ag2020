@@ -35,4 +35,15 @@ describe("game.ui.quest_view", function()
     btn:click()
     assert.spy(app.transitions.assign_hero).was.called_with(quest)
   end)
+
+  describe("hero assigned to quest", function()
+    local hero = require "game.entities.hero":new { }
+    local hq = require("assets.quests.guild_rats"):clone()
+    hq.hero = hero
+    local assigned_quest = moonpie.ui.components.quest_view { quest = hq }
+
+    it("Hides the button and says the hero is on the quest", function()
+      assert.is_nil(assigned_quest:find_by_id("btn_assign_hero"))
+    end)
+  end)
 end)

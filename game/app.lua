@@ -31,7 +31,8 @@ end
 
 function app.transitions.assign_hero(quest)
   app.render(moonpie.ui.components.assign_hero_screen{
-    quest = quest
+    quest = quest,
+    heroes = app.game_state:get_guild().hero_roster
   })
 end
 
