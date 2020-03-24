@@ -28,4 +28,12 @@ describe("game.rules.start_turn.pick_quests", function()
   it("defaults the database to the entire quest database", function()
     assert.has_no_errors(function() pick_quests(game_state) end)
   end)
+
+  it("does not pick the same quest twice and leaves existing quests there", function()
+    pick_quests(game_state, quest_db)
+    local q1, q2 = game_state.quests[1], game_state.quests[2]
+    pick_quests(game_state, quest_db)
+
+    assert.array_matches({q1, q2}, game_state.quests)
+  end)
 end)

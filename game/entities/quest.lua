@@ -10,6 +10,9 @@ function quest:constructor(props)
   self.description = props.description
   self.image = props.image
   self.prerequisites = props.prerequisites
+  self.progress = { turn_counter = 0 }
+  self.turn_counter = 0
+  self.source = props.source
 end
 
 function quest:assign(hero)
@@ -21,11 +24,12 @@ function quest:check_prerequisites(game_state)
 end
 
 function quest:clone()
-  return quest.new{
+  return quest:new{
     title = self.title,
     description = self.description,
     image = self.image,
-    prerequisites = self.prerequisites
+    prerequisites = self.prerequisites,
+    source = self
   }
 end
 

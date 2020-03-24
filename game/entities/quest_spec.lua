@@ -47,6 +47,18 @@ describe("game.entities.quest", function()
     assert.equals(example.image, copy.image)
     assert.equals(example.description, copy.description)
     assert.equals(example.prerequisites, copy.prerequisites)
+    assert.equals(example, copy.source)
+
+    assert.equals(0, copy.turn_counter)
+    assert.equals(0, copy.progress.turn_counter)
+  end)
+
+  it("has a counter for how many turns it's been active", function()
+    assert.equals(0, example.turn_counter)
+  end)
+
+  it("has a table with progress statistics for when the quest is worked on", function()
+    assert.is_table(example.progress)
   end)
 
   describe("prerequisites", function()

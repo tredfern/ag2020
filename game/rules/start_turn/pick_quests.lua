@@ -6,10 +6,11 @@
 return function(game_state, quests)
   quests = quests or require "assets.quests"
 
-  game_state.quests = moonpie.collections.list:new()
   for _, v in ipairs(quests) do
     if v:check_prerequisites(game_state) then
-      game_state.quests:add(v:clone())
+      if moonpie.utility.tables.all(game_state.quests, function(q) return q.source ~= v end) then
+        game_state.quests:add(v:clone())
+      end
     end
   end
 end
