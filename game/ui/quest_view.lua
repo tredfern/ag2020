@@ -24,6 +24,30 @@ local function quest_status(quest)
   end
 end
 
+local function quest_rewards(quest)
+  if quest.rewards == nil then return end
+  local result = moonpie.collections.list:new()
+
+  if quest.rewards.xp then
+    result:add(moonpie.ui.components.text {
+      id = "txt_rewards_xp",
+      text = "XP: {{xp}}",
+      xp = quest.rewards.xp,
+      style = "quest-reward"
+    })
+  end
+  if quest.rewards.money then
+    result:add(moonpie.ui.components.text {
+      id = "txt_rewards_money",
+      text = "$$: {{money}}",
+      money = quest.rewards.money,
+      style = "quest-reward"
+    })
+  end
+
+  return result
+end
+
 moonpie.ui.components("quest_view", function(props)
   return {
     id = tostring(props.quest),
@@ -47,6 +71,8 @@ moonpie.ui.components("quest_view", function(props)
         style = "quest-content"
       },
     }, {
+      quest_rewards(props.quest)
+    },{
       quest_status(props.quest)
     }
   }

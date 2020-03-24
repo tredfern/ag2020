@@ -204,6 +204,10 @@ styles["quest-image"] = {
   height = 150
 }
 
+styles["quest-reward"] = {
+  margin = 5
+}
+
 styles.room_row = {
   border = 1,
   border_color = "light_accent",

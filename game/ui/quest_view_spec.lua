@@ -28,6 +28,11 @@ describe("game.ui.quest_view", function()
     assert.equals(quest_view.id, tostring(quest))
   end)
 
+  it("shows the rewards for the quest", function()
+    assert.not_nil(quest_view:find_by_id("txt_rewards_xp"))
+    assert.not_nil(quest_view:find_by_id("txt_rewards_money"))
+  end)
+
   it("sends you to the assign hero screen", function()
     local app = require "game.app"
     mock(app.transitions)

@@ -11,6 +11,8 @@ function quest:constructor(props)
   self.image = props.image
   self.prerequisites = props.prerequisites
   self.progress = { turn_counter = 0 }
+  self.goals = props.goals
+  self.rewards = props.rewards
   self.turn_counter = 0
   self.source = props.source
 end
@@ -29,7 +31,9 @@ function quest:clone()
     description = self.description,
     image = self.image,
     prerequisites = self.prerequisites,
-    source = self
+    source = self,
+    goals = self.goals,
+    rewards = self.rewards,
   }
 end
 

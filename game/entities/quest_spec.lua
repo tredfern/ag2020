@@ -11,7 +11,14 @@ describe("game.entities.quest", function()
     title = "Defend against goblins!",
     description = "Goblins are attacking...",
     image = "some-image-file",
-    prerequisites = function(gs) return gs:get_turn_counter() > 5 end
+    prerequisites = function(gs) return gs:get_turn_counter() > 5 end,
+    goals = {
+      turns = 3
+    },
+    rewards = {
+      xp = 100,
+      money = 203
+    }
   }
 
   it("Has a title for the quest", function()
@@ -33,6 +40,14 @@ describe("game.entities.quest", function()
     assert.not_nil(example.image)
   end)
 
+  it("has some rewards", function()
+    assert.not_nil(example.rewards)
+  end)
+
+  it("has goals", function()
+    assert.not_nil(example.goals)
+  end)
+
   it("provides a mechanism for checking if available that defaults to false", function()
     game_state.turn_counter = 3
     assert.is_false(example:check_prerequisites(game_state))
@@ -48,6 +63,9 @@ describe("game.entities.quest", function()
     assert.equals(example.description, copy.description)
     assert.equals(example.prerequisites, copy.prerequisites)
     assert.equals(example, copy.source)
+    assert.equals(100, copy.rewards.xp)
+    assert.equals(203, copy.rewards.money)
+    assert.equals(3, copy.goals.turns)
 
     assert.equals(0, copy.turn_counter)
     assert.equals(0, copy.progress.turn_counter)

@@ -12,6 +12,7 @@ function game_state:constructor()
   self.guild = ag:new()
   self.moon = require "game.entities.moon":new()
   self.quests = moonpie.collections.list:new()
+  self.completed_quests = moonpie.collections.list:new()
   self.resource_pool = require "game.entities.resource_pool":new()
   self.turn_counter = 0
 end

@@ -5,6 +5,8 @@ require "game.ui"
 
 function love.load()
   app.render(moonpie.ui.components.title_screen())
+  print(require "assets.quests.explore_dungeon")
+  print(require "assets.quests.explore_dungeon")
 end
 
 function love.update()

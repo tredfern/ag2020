@@ -9,5 +9,12 @@ return quest:new{
   title = "Deliver the Stuff",
   description = "You can take it over there!",
   image = "assets/images/gold-coins.png",
-  prerequisites = quest.prerequisites.turn_counter(2)
+  prerequisites = quest.prerequisites.turn_counter(2),
+  goals = {
+    turns = 5
+  },
+  rewards = {
+    xp = 250,
+    money = 500
+  }
 }

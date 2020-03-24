@@ -9,6 +9,7 @@ local quests = moonpie.collections.list:new()
 for _, v in ipairs(quest_files) do
   if string.find(v, "init.lua") == nil then
     local rp = string.gsub(v, "%.lua", "")
+    rp = string.gsub(rp, "/", ".")
     quests:add(require(rp))
   end
 end

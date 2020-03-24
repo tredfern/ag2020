@@ -9,5 +9,12 @@ return quest:new{
   title = "Rats in the Guild!",
   description = "There are rats in the guild! You need to clean them out to start your business.",
   image = "assets/images/dire-rat.png",
-  prerequisites = function(gs) return gs:get_turn_counter() == 0 end
+  prerequisites = function(gs) return gs:get_turn_counter() == 0 end,
+  goals = {
+    turns = 5
+  },
+  rewards = {
+    xp = 250,
+    money = 500
+  }
 }

@@ -9,5 +9,12 @@ return quest:new{
   title = "Creepy Graveyard",
   description = "There is an old graveyard nearby. There have been reports of bright flashes and sounds at night.",
   image = "ext/moonpie/moonpie/assets/icons/delapouite/graveyard.png",
-  prerequisites = quest.prerequisites.turn_counter(10)
+  prerequisites = quest.prerequisites.turn_counter(10),
+  goals = {
+    turns = 5
+  },
+  rewards = {
+    xp = 250,
+    money = 500
+  }
 }
