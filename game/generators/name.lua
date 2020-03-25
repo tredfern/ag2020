@@ -18,7 +18,8 @@ function generator:create(options)
 end
 
 local function flatten_csv(file)
-  local content = moonpie.utility.csv.open(file)
+  local csv_file = love.filesystem.read(file)
+  local content = moonpie.utility.csv.openstring(csv_file)
   local output = {}
   for fields in content:lines() do
     for _, v in ipairs(fields) do
