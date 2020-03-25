@@ -3,10 +3,10 @@ return {
     lpath = "./?/init.lua;./ext/?.lua;./ext/?/init.lua;./ext/moonpie/?.lua;./ext/moonpie/?/init.lua;",
     ROOT = { "game", "assets" },
     helper = "test_helper.lua"
-
   },
   travis = {
     verbose = true,
-    coverage = true
+    coverage = true,
+    output = "TAP"
   }
 }
